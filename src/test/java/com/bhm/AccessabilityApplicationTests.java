@@ -1,4 +1,4 @@
-package com.bhm.accessability;
+package com.bhm;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
