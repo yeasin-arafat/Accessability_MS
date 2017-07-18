@@ -1,4 +1,4 @@
-package com.bhm.accessability.controller;
+package com.bhm.user_management.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,5 +11,5 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-public class UserAccessController {
+public class UserController {
 }

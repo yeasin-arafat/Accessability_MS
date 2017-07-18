@@ -1,6 +1,4 @@
-package com.bhm.accessability.model;
-
-import org.springframework.context.annotation.Bean;
+package com.bhm.user_management.service;
 
 /**
  * @author : arafat
@@ -9,5 +7,5 @@ import org.springframework.context.annotation.Bean;
  * @project : bhm
  * @since : 7/17/17
  */
-public class User {
+public class LoginService {
 }
