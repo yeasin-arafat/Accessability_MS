@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @author : arafat
- * @version : 1.0.0-snapshot
+ * @version : 1.0v.0-snapshot
  * @description ...
  * @project : bhm
  * @since : 7/17/17
@@ -21,25 +21,29 @@ import org.springframework.stereotype.Repository;
 public class UserRepositoryImpl implements UserRepositoryCustom {
 
     @Autowired
-    Query query;
-    @Autowired
-    Update update;
-    @Autowired
     MongoTemplate mongoTemplate;
 
     @Override
     public boolean updatePassword(String userName, String password) {
 
-         query.addCriteria(Criteria.where("userName").is(userName));
-         update.set("password",password);
+        Query query = new Query(Criteria.where("userName").is(userName));
+        Update update = new Update();
+        update.set("password", password);
 
         WriteResult result = mongoTemplate.updateFirst(query, update, User.class);
 
-        return false;
+        if(result != null){
+            return true;
+        }else{
+
+            return false;
+        }
+
     }
 
     @Override
-    public boolean updateActive(boolean isActive) {
+    public boolean updateActive(String userName, boolean isActive) {
+
         return false;
     }
 

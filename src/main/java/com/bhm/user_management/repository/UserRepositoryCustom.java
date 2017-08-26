@@ -13,7 +13,7 @@ public interface UserRepositoryCustom {
 
     boolean updatePassword(String userName, String password);
 
-    boolean updateActive(boolean isActive);
+    boolean updateActive(String userName, boolean isActive);
 
     boolean createUser(User user);
 }
